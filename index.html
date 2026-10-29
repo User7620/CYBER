@@ -1,0 +1,1304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171c1e">
+<meta name="description" content="Kalpesh Patil's cybersecurity case file portfolio covering IT infrastructure experience, security tools, and cybersecurity learning labs.">
+<title>CASE FILE KP-2026 | Kalpesh Patil</title>
+
+<style>
+:root {
+  --bg: #e6e8e2;
+  --paper: #f8f8f2;
+  --ink: #171c1e;
+  --dark: #202729;
+  --green: #58e6ac;
+  --green-dark: #173f31;
+  --red: #c32c32;
+  --blue: #285e8a;
+  --muted: #657071;
+  --line: #bdc4bf;
+  --white: #f5f7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 10%, #f7f7f1 0, transparent 30%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Courier New", monospace;
+  line-height: 1.65;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: .10;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(20, 30, 30, .08) 4px
+  );
+}
+
+a {
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--green);
+  color: #101715;
+}
+
+/* Main case-file sheet */
+
+.shell {
+  max-width: 1120px;
+  width: calc(100% - 36px);
+  margin: 26px auto;
+  background: var(--paper);
+  border: 1px solid #9ca5a0;
+  box-shadow: 9px 9px 0 rgba(30, 39, 37, .14);
+  position: relative;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 10px 20px;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.topbar span:last-child {
+  color: var(--green);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 42px clamp(20px, 5vw, 60px);
+  border-bottom: 2px dashed var(--line);
+}
+
+.hero::after {
+  content: "KP-2026";
+  position: absolute;
+  right: -20px;
+  bottom: 8px;
+  font-size: clamp(55px, 12vw, 130px);
+  font-weight: 900;
+  letter-spacing: -8px;
+  color: rgba(30, 50, 45, .035);
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.stamp {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 3px solid var(--red);
+  color: var(--red);
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: rotate(-4deg);
+  animation: stampIn .8s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.kicker {
+  margin-top: 27px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 12px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(43px, 8vw, 82px);
+  line-height: .98;
+  letter-spacing: -4px;
+  overflow-wrap: anywhere;
+}
+
+.red-dot {
+  color: var(--red);
+}
+
+.role {
+  margin-top: 16px;
+  color: var(--green-dark);
+  font-weight: 900;
+  font-size: clamp(13px, 2.2vw, 18px);
+}
+
+.intro {
+  max-width: 720px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+mark {
+  background: #d6f8e7;
+  color: #143e2c;
+  padding: 0 3px;
+}
+
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tagline span {
+  padding: 5px 8px;
+  background: #eceee8;
+  border: 1px dashed #aeb7b1;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 13px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color .2s ease,
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.btn.primary {
+  color: white;
+  background: var(--ink);
+}
+
+.btn:hover {
+  color: white;
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 rgba(0,0,0,.13);
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.location {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+/* Navigation */
+
+nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding: 15px clamp(20px, 5vw, 60px);
+  background: #e8ebe4;
+  border-bottom: 1px solid var(--line);
+}
+
+nav a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+/* Sections */
+
+section {
+  position: relative;
+  padding: 34px clamp(20px, 5vw, 60px);
+  border-bottom: 1px dashed var(--line);
+}
+
+h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  font-size: clamp(19px, 3vw, 26px);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+h2 .number {
+  color: var(--red);
+  margin-right: 5px;
+}
+
+.section-subtitle {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+h3 {
+  margin: 5px 0 10px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid var(--line);
+  background: #fffefa;
+  box-shadow: 3px 3px 0 rgba(30,39,37,.07);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #7c9588;
+  box-shadow: 5px 6px 0 rgba(30,39,37,.12);
+}
+
+.evidence-id {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+  overflow-wrap: anywhere;
+}
+
+.notice {
+  padding: 13px 15px;
+  border-left: 4px solid var(--blue);
+  background: #e9eef2;
+  color: #263c4b;
+  font-size: 12px;
+}
+
+/* Toolkit: high-contrast skill registry */
+
+#toolkit {
+  background: #e5e7e2;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#toolkit::before {
+  content: "CLASSIFIED // SKILL REGISTRY";
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  z-index: -1;
+  color: rgba(182, 36, 36, .055);
+  font-size: clamp(17px, 3vw, 30px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skill-group {
+  position: relative;
+  min-width: 0;
+  padding: 19px;
+  overflow: hidden;
+  background: #202729;
+  color: #f5f7f2;
+  border: 1px solid #53615f;
+  border-top: 4px solid var(--green);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 rgba(23,27,28,.14);
+  animation: panelEntry .65s ease both;
+  transition:
+    border-color .25s,
+    box-shadow .25s,
+    transform .25s;
+}
+
+.skill-group:nth-child(2) { animation-delay: .10s; }
+.skill-group:nth-child(3) { animation-delay: .20s; }
+.skill-group:nth-child(4) { animation-delay: .30s; }
+
+.skill-group:hover {
+  border-color: var(--green);
+  box-shadow:
+    0 0 0 1px var(--green),
+    0 0 22px rgba(75,214,160,.15);
+  transform: translateY(-3px);
+}
+
+.skill-group h3 {
+  color: #70edbd;
+  font-size: 15px;
+  margin: 0 0 15px;
+}
+
+.skill-description {
+  color: #c3ceca;
+  font-size: 11px;
+  margin: -7px 0 14px;
+}
+
+.redactions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.redactions button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 40px;
+  max-width: 100%;
+  padding: 9px 11px;
+
+  background: #f3f5ef;
+  color: #172421;
+  border: 1px solid #91a39b;
+  border-radius: 3px;
+
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  cursor: pointer;
+  transition:
+    background .22s ease,
+    color .22s ease,
+    border-color .22s ease,
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.redactions button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -130%;
+  width: 70%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(75,214,160,.36),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.redactions button:hover::after {
+  animation: skillSweep .65s ease;
+}
+
+.redactions button:hover {
+  background: #c9ffe8;
+  color: #10281f;
+  border-color: var(--green);
+  box-shadow: 0 0 12px rgba(75,214,160,.22);
+  transform: translateY(-2px);
+}
+
+.redactions button:focus-visible,
+.btn:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 3px;
+}
+
+/* Redacted state */
+
+.redactions button.redacted {
+  background: #080b0c;
+  color: #080b0c;
+  border-color: #080b0c;
+  box-shadow: inset 0 0 0 1px #303a38;
+}
+
+.redactions button.redacted::before {
+  content: "CLASSIFIED";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  background: #080b0c;
+  color: #ff7777;
+  font-size: 10px;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.redactions button.redacted:hover {
+  border-color: #ff6868;
+  box-shadow: 0 0 12px rgba(255,104,104,.2);
+}
+
+#redactAll {
+  transition: background .2s, color .2s, transform .2s;
+}
+
+/* Windows event IDs */
+
+.event {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.event b {
+  min-width: 42px;
+  color: var(--red);
+}
+
+/* Training chips */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid #b8c2bc;
+  background: #e8eee8;
+  color: #183b2c;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Contact */
+
+.contact a {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 21px clamp(20px, 5vw, 60px);
+  background: #1d2425;
+  color: #e8e8e3;
+  font-size: 11px;
+}
+
+footer span:last-child {
+  color: var(--green);
+}
+
+/* Scroll-reveal animation */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity .55s ease,
+    transform .55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes stampIn {
+  from {
+    opacity: 0;
+    transform: scale(1.35) rotate(-12deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(-4deg);
+  }
+}
+
+@keyframes panelEntry {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillSweep {
+  from { left: -130%; }
+  to { left: 150%; }
+}
+
+/* Tablet */
+
+@media (max-width: 760px) {
+  .shell {
+    width: calc(100% - 20px);
+    margin: 12px auto;
+  }
+
+  .skills,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 30px 22px;
+  }
+
+  section {
+    padding: 28px 22px;
+  }
+
+  nav {
+    padding: 13px 22px;
+    gap: 12px 18px;
+  }
+
+  .skill-group {
+    padding: 17px;
+  }
+
+  .redactions button {
+    min-height: 42px;
+    padding: 10px 11px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 420px) {
+  .shell {
+    width: calc(100% - 12px);
+    margin: 6px auto;
+    box-shadow: 4px 4px 0 rgba(30,39,37,.12);
+  }
+
+  .topbar {
+    padding: 10px 12px;
+    font-size: 9px;
+    letter-spacing: .3px;
+  }
+
+  .hero {
+    padding: 26px 15px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 13vw, 60px);
+    letter-spacing: -2px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  .role {
+    font-size: 13px;
+  }
+
+  .tagline {
+    gap: 6px;
+  }
+
+  .tagline span {
+    font-size: 9px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 7px;
+    font-size: 10px;
+  }
+
+  nav {
+    padding: 12px 15px;
+    gap: 10px 14px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  section {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .skill-group {
+    padding: 14px;
+  }
+
+  .redactions {
+    gap: 8px;
+  }
+
+  .redactions button {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  #toolkit::before {
+    top: 7px;
+    right: -18px;
+    font-size: 13px;
+  }
+
+  footer {
+    padding: 18px 15px;
+    font-size: 10px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Printing */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .shell {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  nav,
+  .actions,
+  #redactAll {
+    display: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .skill-group {
+    break-inside: avoid;
+    background: white;
+    color: black;
+    border: 1px solid #999;
+  }
+
+  .skill-group h3 {
+    color: black;
+  }
+
+  .redactions button,
+  .redactions button.redacted {
+    color: black;
+    background: white;
+    border: 1px solid #777;
+  }
+
+  .redactions button.redacted::before {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="shell">
+
+  <div class="topbar">
+    <span>CASE FILE: KP-2026</span>
+    <span>CLASSIFICATION: PROFESSIONAL PROFILE</span>
+    <span>STATUS: OPEN TO WORK</span>
+  </div>
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="stamp">OPEN TO WORK</div>
+
+      <p class="kicker">CYBERSECURITY PERSONNEL DOSSIER / 001</p>
+
+      <h1>Kalpesh<br>Patil<span class="red-dot">.</span></h1>
+
+      <div class="role">
+        JUNIOR CYBERSECURITY · VAPT · VULNERABILITY ASSESSMENT
+      </div>
+
+      <p class="intro">
+        Computer Engineering graduate transitioning from
+        <mark>IT infrastructure and troubleshooting</mark> into cybersecurity.
+        Experience with network connectivity, server/NAS operations, SQL Server
+        checks and endpoint-protected environments. Building practical security
+        skills through learning labs in network assessment, Windows event-log
+        review and web application testing.
+      </p>
+
+      <div class="tagline">
+        <span>NETWORK SECURITY</span>
+        <span>VULNERABILITY ASSESSMENT</span>
+        <span>WINDOWS LOGS</span>
+        <span>WEB SECURITY</span>
+        <span>IT OPERATIONS</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="mailto:kpagare1111@gmail.com">
+          CONTACT / INTERVIEW
+        </a>
+
+        <a class="btn" href="https://github.com/User7620"
+           target="_blank" rel="noopener noreferrer">
+          GITHUB ↗
+        </a>
+
+        <a class="btn" href="https://linkedin.com/in/kalpeshpatil111"
+           target="_blank" rel="noopener noreferrer">
+          LINKEDIN ↗
+        </a>
+
+        <button class="btn" id="redactAll" type="button"
+                aria-pressed="false">
+          RE-REDACT TOOLKIT
+        </button>
+      </div>
+
+      <p class="location">
+        Nagpur, Maharashtra · Open to suitable opportunities in Pune,
+        Mumbai and other locations
+      </p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+
+  <nav aria-label="Portfolio navigation">
+    <a href="#history">01 / EXPERIENCE</a>
+    <a href="#toolkit">02 / TOOLKIT</a>
+    <a href="#evidence">03 / LAB EXHIBITS</a>
+    <a href="#training">04 / TRAINING</a>
+    <a href="#contact">05 / CONTACT</a>
+  </nav>
+
+  <!-- EXPERIENCE -->
+
+  <section id="history">
+    <h2><span class="number">I.</span> Incident History / Experience</h2>
+
+    <div class="grid">
+
+      <article class="card reveal">
+        <div class="evidence-id">RECORD 01 · SEP 2026 – PRESENT</div>
+        <h3>HTMS Project Engineer</h3>
+        <p><b>Arya Omnitalk</b></p>
+
+        <ul>
+          <li>
+            Troubleshoot network connectivity and operational technology issues.
+          </li>
+          <li>
+            Support server and NAS storage operations and routine checks.
+          </li>
+          <li>
+            Perform SQL Server data checks and operational validation tasks.
+          </li>
+          <li>
+            Work in a Sophos-protected environment and review firewall information
+            within assigned permissions; no claim of firewall rule administration.
+          </li>
+          <li>
+            Support CCTV/iVMS installation, configuration, monitoring and reporting.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="evidence-id">RECORD 02 · SEP 2025 – MAY 2026</div>
+        <h3>IT Engineer</h3>
+        <p><b>ITCONS E-Solutions Pvt. Ltd.</b></p>
+
+        <ul>
+          <li>
+            Supported Windows endpoints, desktops and enterprise applications.
+          </li>
+          <li>
+            Investigated incidents and resolved support tickets within SLA timelines.
+          </li>
+          <li>
+            Troubleshot TCP/IP, DNS, DHCP and network connectivity issues.
+          </li>
+          <li>
+            Assisted with Windows Server support and routine configuration checks.
+          </li>
+          <li>
+            Worked in a CrowdStrike-protected environment and supported RFID/iVMS systems.
+          </li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TOOLKIT -->
+
+  <section id="toolkit">
+    <h2>
+      <span class="number">II.</span> Toolkit / Skill Registry
+    </h2>
+
+    <p class="muted">
+      Tap any skill to redact or reveal it. Labels indicate learning or exposure,
+      not expert-level proficiency.
+    </p>
+
+    <div class="skills">
+
+      <div class="skill-group">
+        <h3>Assessment & Web Testing</h3>
+        <p class="skill-description">LEARNING / LAB TOOLKIT</p>
+
+        <div class="redactions">
+          <button type="button">Nmap</button>
+          <button type="button">Burp Suite</button>
+          <button type="button">Wireshark</button>
+          <button type="button">Nessus (Lab)</button>
+          <button type="button">OWASP Top 10</button>
+          <button type="button">Kali Linux</button>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Logs & Endpoint Exposure</h3>
+        <p class="skill-description">LOG REVIEW / SECURITY ENVIRONMENTS</p>
+
+        <div class="redactions">
+          <button type="button">Splunk (Lab)</button>
+          <button type="button">Windows Event Viewer</button>
+          <button type="button">Event Log Review</button>
+          <button type="button">CrowdStrike Exposure</button>
+          <button type="button">Sophos Exposure</button>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Networking & Infrastructure</h3>
+        <p class="skill-description">CORE TECHNICAL FUNDAMENTALS</p>
+
+        <div class="redactions">
+          <button type="button">TCP/IP</button>
+          <button type="button">DNS</button>
+          <button type="button">DHCP</button>
+          <button type="button">Routing / Switching Concepts</button>
+          <button type="button">Firewall Concepts</button>
+          <button type="button">VPN / IDS / IPS Concepts</button>
+          <button type="button">NAS</button>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Systems, Data & Scripting</h3>
+        <p class="skill-description">FUNDAMENTALS / OPERATIONS</p>
+
+        <div class="redactions">
+          <button type="button">Windows Server</button>
+          <button type="button">RHEL Fundamentals</button>
+          <button type="button">SQL Server Operations</button>
+          <button type="button">Python Fundamentals</button>
+          <button type="button">SQL Fundamentals</button>
+          <button type="button">JavaScript Fundamentals</button>
+          <button type="button">HTML / CSS</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LAB EXHIBITS -->
+
+  <section id="evidence">
+    <h2><span class="number">III.</span> Evidence / Lab Exhibits</h2>
+
+    <!-- <div class="notice">
+      These are learning-lab descriptions, not paid penetration-testing engagements.
+      Keep each exhibit only if you personally completed the described work.
+      Add sanitized evidence where available. Never publish company data,
+      credentials or sensitive logs.
+    </div> -->
+
+    <div class="grid" style="margin-top:18px">
+
+      <article class="card reveal">
+        <div class="evidence-id">EXHIBIT A · SIEM</div>
+        <h3>Splunk Log Analysis</h3>
+        <ul>
+          <li>
+            Practise searching Windows event data and reviewing failed-logon activity.
+          </li>
+          <li>
+            Create basic searches or dashboards and record what events may indicate.
+          </li>
+        </ul>
+        <!-- <p class="muted">
+          Evidence to add: sanitized SPL searches and a dashboard screenshot.
+        </p> -->
+      </article>
+
+      <article class="card reveal">
+        <div class="evidence-id">EXHIBIT B · WINDOWS</div>
+        <h3>Windows Security Event Review</h3>
+
+        <div class="event"><b>4624</b><span>Successful logon</span></div>
+        <div class="event"><b>4625</b><span>Failed logon</span></div>
+        <div class="event"><b>4688</b><span>Process creation</span></div>
+        <div class="event"><b>4672</b><span>Special privileges assigned</span></div>
+
+        <!-- <p class="muted">
+          Focus: investigate context. One event alone does not prove an attack.
+        </p> -->
+      </article>
+
+      <article class="card reveal">
+        <div class="evidence-id">EXHIBIT C · NETWORK</div>
+        <h3>Nmap Network Assessment</h3>
+        <ul>
+          <li>
+            Practise host discovery, port scanning and service enumeration in an
+            authorised lab.
+          </li>
+          <li>
+            Record exposed services and consider safe remediation and verification.
+          </li>
+        </ul>
+        <!-- <p class="muted">
+          Evidence to add: lab scope, example commands and a sanitized findings table.
+        </p> -->
+      </article>
+
+      <article class="card reveal">
+        <div class="evidence-id">EXHIBIT D · WEB</div>
+        <h3>Web Application Security Practice</h3>
+        <ul>
+          <li>
+            Inspect HTTP requests and responses using Burp Suite in a lab.
+          </li>
+          <li>
+            Study OWASP Top 10 categories and basic testing methodology.
+          </li>
+        </ul>
+        <!-- <p class="muted">
+          Evidence to add: lab-only request/response example and a remediation note.
+        </p> -->
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+
+  <section id="training">
+    <h2><span class="number">IV.</span> Training & Academic Record</h2>
+
+    <article class="card reveal">
+      <div class="evidence-id">PROFESSIONAL TRAINING</div>
+      <h3>SevenMentor Institute, Pune</h3>
+
+      <div class="chips">
+        <span class="chip">CEH Preparation</span>
+        <span class="chip">CCNA Topics</span>
+        <span class="chip">VAPT</span>
+        <span class="chip">SOC Concepts</span>
+        <span class="chip">RHEL</span>
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">JavaScript</span>
+      </div>
+<!-- 
+      <p class="muted">
+        These are institute training topics, not independently earned certifications.
+        Confirm course status and describe it accurately. No official CEH or CCNA
+        certification is implied.
+      </p> -->
+
+      <hr style="border:0;border-top:1px dashed var(--line);margin:22px 0">
+
+      <div class="evidence-id">ACADEMIC RECORD</div>
+      <h3>B.E. Computer Engineering</h3>
+      <p>MET BKC Institute of Engineering, Nashik · 2024</p>
+
+      <p><b>Languages:</b> English, Hindi, Marathi</p>
+    </article>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <h2><span class="number">V.</span> Contact / Case Closure</h2>
+
+    <p>
+      Interested in entry-level opportunities in Junior Cybersecurity,
+      VAPT Trainee, Vulnerability Assessment, Security Testing or
+      Information Security.
+    </p>
+
+    <div class="contact">
+      <a href="mailto:kpagare1111@gmail.com">
+        EMAIL: kpagare1111@gmail.com
+      </a>
+
+      <a href="https://linkedin.com/in/kalpeshpatil111"
+         target="_blank" rel="noopener noreferrer">
+        LINKEDIN: linkedin.com/in/kalpeshpatil111
+      </a>
+
+      <a href="https://github.com/User7620"
+         target="_blank" rel="noopener noreferrer">
+        GITHUB: github.com/User7620
+      </a>
+    </div>
+
+    
+<div class="notice">
+  <strong>Professional Training & Certifications</strong><br>
+  Completed technical training through SevenMentor Institute, Pune,
+  covering CEH preparation, CCNA, VAPT, SOC, RHEL and other technical subjects.
+  Institute-issued course completion certificates are listed where applicable.
+  Certification and course status can be verified upon request.
+</div>
+
+  </section>
+
+  <footer>
+    <span>CASE FILE KP-2026 · KALPESH PATIL</span>
+    <span>CLASSIFICATION: PUBLIC PORTFOLIO</span>
+  </footer>
+
+</div>
+
+<script>
+/* ===== INTERACTIVE REDACTION ===== */
+
+const skillButtons = document.querySelectorAll(".redactions button");
+const redactAll = document.getElementById("redactAll");
+
+function setRedacted(button, redacted) {
+  button.classList.toggle("redacted", redacted);
+  button.setAttribute("aria-pressed", String(redacted));
+
+  if (redacted) {
+    button.setAttribute(
+      "aria-label",
+      "Classified skill. Activate to reveal."
+    );
+  } else {
+    button.setAttribute(
+      "aria-label",
+      button.textContent.trim() + ". Activate to redact."
+    );
+  }
+}
+
+skillButtons.forEach((button) => {
+  button.setAttribute("aria-pressed", "false");
+
+  button.addEventListener("click", () => {
+    const redacted = !button.classList.contains("redacted");
+    setRedacted(button, redacted);
+  });
+});
+
+if (redactAll) {
+  redactAll.setAttribute("aria-pressed", "false");
+
+  redactAll.addEventListener("click", () => {
+    const shouldRedact =
+      redactAll.getAttribute("aria-pressed") !== "true";
+
+    skillButtons.forEach((button) => {
+      setRedacted(button, shouldRedact);
+    });
+
+    redactAll.setAttribute("aria-pressed", String(shouldRedact));
+
+    redactAll.textContent = shouldRedact
+      ? "DECLASSIFY TOOLKIT"
+      : "RE-REDACT TOOLKIT";
+  });
+}
+
+/* ===== SCROLL REVEAL ===== */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.10
+  });
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach((element) => {
+    element.classList.add("visible");
+  });
+}
+</script>
+
+</body>
+</html>
